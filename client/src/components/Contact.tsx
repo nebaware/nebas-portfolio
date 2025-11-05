@@ -57,10 +57,10 @@ export default function Contact() {
   };
 
   const socialLinks = [
-    { icon: Github, url: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Github, url: "https://github.com/nebaware", label: "GitHub" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/nebiyu-tsegaye1/", label: "LinkedIn" },
     { icon: Twitter, url: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, url: "mailto:email@example.com", label: "Email" },
+    { icon: Mail, url: "mailto:nebaware@gmail.com", label: "Email" },
   ];
 
   return (

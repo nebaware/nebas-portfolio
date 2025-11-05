@@ -52,8 +52,8 @@ export default function About() {
             <div className="space-y-4">
               <p className="text-muted-foreground leading-relaxed" data-testid="text-bio-1">
                 Hello! I'm a passionate software developer who enjoys creating things that
-                live on the internet. My interest in web development started back in 2018
-                when I decided to try building my first website — turns out, diving into
+                live on the internet. My interest in web development started back in 2023
+                when I decided to learn and try building my first website — turns out, diving into
                 HTML & CSS taught me a lot about problem-solving and design!
               </p>
               <p className="text-muted-foreground leading-relaxed" data-testid="text-bio-2">
