@@ -71,11 +71,17 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  const host = process.env.HOST || "0.0.0.0";
+
+  // On some platforms (notably Windows), setting `reusePort: true` can cause
+  // an ENOTSUP error when attempting to bind the socket. Only enable
+  // `reusePort` on platforms that typically support it (non-win32).
+  const listenOptions: any = { port, host };
+  if (process.platform !== "win32") {
+    listenOptions.reusePort = true;
+  }
+
+  server.listen(listenOptions, () => {
+    log(`serving on ${host}:${port}`);
   });
 })();
