@@ -23,11 +23,11 @@ export default function ProjectCard({
   featured = false,
 }: ProjectCardProps) {
   return (
-    <Card className="group overflow-hidden hover-elevate transition-all duration-300" data-testid={`card-project-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Card className="group overflow-hidden hover-elevate transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" data-testid={`card-project-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       <div className="relative overflow-hidden aspect-video">
         {featured && (
           <Badge
-            className="absolute top-4 left-4 z-10 bg-primary/90 text-primary-foreground"
+            className="absolute top-4 left-4 z-10 bg-primary text-primary-foreground animate-pulse"
             data-testid="badge-featured"
           >
             Featured
@@ -36,9 +36,10 @@ export default function ProjectCard({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
           data-testid="img-project"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       <CardContent className="p-6 space-y-4">
         <h3 className="text-xl font-semibold group-hover:text-primary transition-colors" data-testid="text-project-title">
