@@ -31,7 +31,7 @@ export default function Hero() {
             Hi, my name is
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4" data-testid="text-name">
-            Your Name Here.
+            Nebiyu Tsegaye.
           </h1>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6" data-testid="text-tagline">
             I build things for the web.

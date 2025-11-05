@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import headshotImage from "@assets/generated_images/Professional_developer_headshot_portrait_0b14008f.png";
+import headshotImage from "@assets/neba_1762366818664.jpg";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -93,8 +93,8 @@ export default function About() {
               <div className="relative group">
                 <div className="absolute -inset-2 bg-primary/20 rounded-md transform group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"></div>
                 <Avatar className="relative h-64 w-64 border-2 border-primary rounded-md" data-testid="img-profile">
-                  <AvatarImage src={headshotImage} alt="Profile" className="object-cover" />
-                  <AvatarFallback className="text-4xl rounded-md">YN</AvatarFallback>
+                  <AvatarImage src={headshotImage} alt="Nebiyu Tsegaye" className="object-cover" />
+                  <AvatarFallback className="text-4xl rounded-md">NT</AvatarFallback>
                 </Avatar>
               </div>
             </div>
