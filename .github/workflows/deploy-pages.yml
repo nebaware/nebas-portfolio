@@ -10,14 +10,15 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  pages-deploy:
+    name: Build and deploy (Node 20)
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js 20
+      - name: Set up Node 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -26,12 +27,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build site
         env:
           NODE_ENV: production
         run: npm run build
 
-      - name: Upload Pages artifact
+      - name: Verify build output
+        run: |
+          if [ -d ./dist/public ]; then echo "dist/public exists"; ls -la ./dist/public; else echo "dist/public not found"; exit 1; fi
+
+      - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist/public
