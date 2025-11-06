@@ -4,6 +4,9 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // When building for GitHub Pages, set the base to the repo name so assets are
+  // referenced under /nebas-portfolio/. During dev we keep the default '/'.
+  base: process.env.NODE_ENV === 'production' ? '/nebas-portfolio/' : '/',
   plugins: [
     react(),
     runtimeErrorOverlay(),
